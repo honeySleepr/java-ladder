@@ -7,12 +7,14 @@ public class LadderMaker {
 
     private final int WIDTH;
     private final int HEIGHT;
-    private List<Line> ladder;
+    private List<Line> ladder = new ArrayList<>();
+    private List<Player> playerList;
+    private List<Prize> prizeList;
 
-
-    public LadderMaker(int nameCount, int height) {
-        ladder = new ArrayList<>();
-        this.WIDTH = nameCount * 2 - 1;
+    public LadderMaker(List<Player> playerList, List<Prize> prizeList, int height) {
+        this.playerList = playerList;
+        this.prizeList = prizeList;
+        this.WIDTH = playerList.size() * 2 - 1;
         this.HEIGHT = height;
     }
 
@@ -26,5 +28,26 @@ public class LadderMaker {
         return ladder;
     }
 
+    public void calculate() {
+        for (int i = 0; i < playerList.size(); i++) {
+            findResult(i);
 
+        }
+    }
+
+    private void findResult(int startIndex) {
+        for (int i = 0; i < ladder.size(); i++) {
+            /*findNextIndex(startIndex);*/
+
+        }
+    }
+
+    private void findNextIndex() {
+        /*findDirection(startIndex);*/
+    }
+
+    private void findDirection(int startIndex) {
+        /* ladder.get(0).getLine(startIndex);*/ // Line
+
+    }
 }
