@@ -14,8 +14,10 @@ public class Controller{
 
     public void runApp() {
         input.processInput();
-        LadderMaker ladderMaker = new LadderMaker(input.getNameList().size(), input.getHeight());
+        LadderMaker ladderMaker = new LadderMaker(input.getNameList(), input.getPrizeList(),
+            input.getHeight());
         ladderMaker.make();
+        ladderMaker.calculate();
 
         output.printNameAndPrize(input.getNameList(), 6);
         output.printLadder(ladderMaker.getLadderList());
